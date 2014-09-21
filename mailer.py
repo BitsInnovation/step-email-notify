@@ -38,6 +38,11 @@ try:
 except ImportError:
     import queue as Queue  # Renamed in Python3
 
+try:
+    basestring = basestring
+except NameError:
+    basestring = (str, bytes)  # Python3 support
+
 # this is to support name changes
 # from version 2.4 to version 2.5
 try:
