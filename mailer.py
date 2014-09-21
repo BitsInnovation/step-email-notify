@@ -31,8 +31,12 @@ Sample code:
 from __future__ import print_function
 import smtplib
 import threading
-import Queue
 import uuid
+
+try:
+    import Queue
+except ImportError:
+    import queue as Queue  # Renamed in Python3
 
 # this is to support name changes
 # from version 2.4 to version 2.5
