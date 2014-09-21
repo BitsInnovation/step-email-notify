@@ -2,11 +2,12 @@
 # from email.mime.multipart import MIMEMultipart
 # from email.mime.text import MIMEText
 # import smtplib
+from __future__ import print_function
 import mailer
 import sys
 
 if len(sys.argv) < 8 :
-  print 'There should be 8 arguments'
+  print('There should be 8 arguments')
   sys.exit(1)
 
 fromaddr = str(sys.argv[1])

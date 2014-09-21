@@ -28,6 +28,7 @@ Sample code:
     sender.send(message)
 
 """
+from __future__ import print_function
 import smtplib
 import threading
 import Queue
@@ -92,7 +93,7 @@ class Mailer(object):
         them as a list:
         mailer.send([msg1, msg2, msg3])
         """
-        print self.host, self.port
+        print(self.host, self.port)
         server = smtplib.SMTP(self.host, self.port)
 
         if self._usr and self._pwd:
@@ -138,7 +139,7 @@ class Mailer(object):
                 bcc = list(msg.BCC)
 
         you = to + cc + bcc
-        print me, you, msg.as_string()
+        print(me, you, msg.as_string())
         server.sendmail(me, you, msg.as_string())
 
 class Message(object):
